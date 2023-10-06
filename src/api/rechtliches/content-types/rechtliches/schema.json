@@ -1,0 +1,23 @@
+{
+  "kind": "singleType",
+  "collectionName": "rechtlichess",
+  "info": {
+    "singularName": "rechtliches",
+    "pluralName": "rechtlichess",
+    "displayName": "Rechtliches"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Impressum": {
+      "type": "text",
+      "required": true
+    },
+    "Datenschutzerklaerung": {
+      "type": "text",
+      "required": true
+    }
+  }
+}

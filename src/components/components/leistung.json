@@ -1,0 +1,17 @@
+{
+  "collectionName": "components_components_leistungs",
+  "info": {
+    "displayName": "Leistung"
+  },
+  "options": {},
+  "attributes": {
+    "Beschreibung": {
+      "type": "text",
+      "required": true
+    },
+    "Ueberschrift": {
+      "type": "string",
+      "required": true
+    }
+  }
+}

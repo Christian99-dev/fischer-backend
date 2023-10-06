@@ -1,0 +1,23 @@
+{
+  "kind": "singleType",
+  "collectionName": "unternehmens",
+  "info": {
+    "singularName": "unternehmen",
+    "pluralName": "unternehmens",
+    "displayName": "Unternehmen"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Logo": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false,
+      "required": true
+    }
+  }
+}

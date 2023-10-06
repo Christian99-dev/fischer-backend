@@ -1,0 +1,47 @@
+{
+  "kind": "singleType",
+  "collectionName": "formulars",
+  "info": {
+    "singularName": "formular",
+    "pluralName": "formulars",
+    "displayName": "Formular"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Vorname": {
+      "type": "string",
+      "required": true
+    },
+    "Nachname": {
+      "type": "string",
+      "required": true
+    },
+    "StrasseHausnummer": {
+      "type": "string",
+      "required": true
+    },
+    "PlzOrt": {
+      "type": "string",
+      "required": true
+    },
+    "Email": {
+      "type": "string",
+      "required": true
+    },
+    "Anliegen": {
+      "type": "string",
+      "required": true
+    },
+    "Button": {
+      "type": "string",
+      "required": true
+    },
+    "Ueberschrift": {
+      "type": "string",
+      "required": true
+    }
+  }
+}

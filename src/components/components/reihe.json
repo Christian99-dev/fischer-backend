@@ -1,0 +1,13 @@
+{
+  "collectionName": "components_components_reihes",
+  "info": {
+    "displayName": "reihe"
+  },
+  "options": {},
+  "attributes": {
+    "Text": {
+      "type": "string",
+      "required": true
+    }
+  }
+}

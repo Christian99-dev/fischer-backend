@@ -1,0 +1,21 @@
+{
+  "collectionName": "components_components_spaltes",
+  "info": {
+    "displayName": "spalte",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "Ueberschrift": {
+      "type": "string",
+      "required": true
+    },
+    "Reihen": {
+      "type": "component",
+      "repeatable": true,
+      "component": "components.reihe",
+      "min": 1,
+      "required": true
+    }
+  }
+}

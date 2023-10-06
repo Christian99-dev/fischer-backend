@@ -1,0 +1,22 @@
+{
+  "kind": "singleType",
+  "collectionName": "projektes",
+  "info": {
+    "singularName": "projekte",
+    "pluralName": "projektes",
+    "displayName": "Projekte"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Kategorien": {
+      "type": "component",
+      "repeatable": true,
+      "component": "components.projektkategorie",
+      "min": 1,
+      "required": true
+    }
+  }
+}

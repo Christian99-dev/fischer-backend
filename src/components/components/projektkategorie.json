@@ -1,0 +1,27 @@
+{
+  "collectionName": "components_components_projektkategories",
+  "info": {
+    "displayName": "Projektkategorie"
+  },
+  "options": {},
+  "attributes": {
+    "KategorieName": {
+      "type": "string",
+      "required": true
+    },
+    "KategorieBild": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false,
+      "required": true
+    },
+    "Projekte": {
+      "type": "component",
+      "repeatable": true,
+      "component": "components.projekt",
+      "min": 1
+    }
+  }
+}

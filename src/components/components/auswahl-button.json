@@ -1,0 +1,21 @@
+{
+  "collectionName": "components_components_auswahl_buttons",
+  "info": {
+    "displayName": "AuswahlButton"
+  },
+  "options": {},
+  "attributes": {
+    "Text": {
+      "type": "string",
+      "required": true
+    },
+    "Hintergrund": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false,
+      "required": true
+    }
+  }
+}

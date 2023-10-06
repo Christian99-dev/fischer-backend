@@ -1,0 +1,25 @@
+{
+  "collectionName": "components_components_projekts",
+  "info": {
+    "displayName": "Projekt"
+  },
+  "options": {},
+  "attributes": {
+    "Titel": {
+      "type": "string",
+      "required": true
+    },
+    "Beschreibung": {
+      "type": "text",
+      "required": true
+    },
+    "Bild": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false,
+      "required": true
+    }
+  }
+}

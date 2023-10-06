@@ -1,0 +1,31 @@
+{
+  "kind": "singleType",
+  "collectionName": "leistungens",
+  "info": {
+    "singularName": "leistungen",
+    "pluralName": "leistungens",
+    "displayName": "Leistungen"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Hintergrund": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false,
+      "required": true
+    },
+    "Leistungen": {
+      "type": "component",
+      "repeatable": true,
+      "component": "components.leistung",
+      "required": true,
+      "max": 6,
+      "min": 1
+    }
+  }
+}
