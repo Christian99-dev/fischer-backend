@@ -3,7 +3,7 @@ name: Build and Deploy Strapi App
 on:
   push:
     branches:
-      - production  # Ändere dies auf den Namen deiner Hauptentwicklungsbranch
+      - production  
 
 jobs:
   build-and-deploy:
@@ -16,19 +16,19 @@ jobs:
     - name: Set up Node.js
       uses: actions/setup-node@v2
       with:
-        node-version: 14  # Ändere dies auf die Node.js-Version deiner Strapi-App
+        node-version: 14 
 
     - name: Install Dependencies
       run: npm install
 
     - name: Build Strapi App for Production
-      run: npm run build  # Ändere dies entsprechend dem Befehl, um deine Strapi-App zu bauen
+      run: npm run build  
 
     - name: Upload to FTP
-      uses: wvanvlaenderen/ftp-action@v3
+      uses: sebastianpopp/ftp-action@releases/v2
       with:
-        ftp-server: ${{ secrets.FTP_SERVER }}
-        ftp-username: ${{ secrets.FTP_USERNAME }}
-        ftp-password: ${{ secrets.FTP_PASSWORD }}
-        local-dir: ./build  # Ändere dies auf den Pfad zu deinem Build-Ordner
-        remote-dir: /strapi  # Ändere dies auf den Remote-FTP-Pfad
+        host: ${{ secrets.FTP_SERVER }}
+        user: ${{ secrets.FTP_USERNAME }}
+        password: ${{ secrets.FTP_PASSWORD }}
+        localDir: "./build"  
+        remoteDir: "/strapi"  
