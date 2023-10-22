@@ -24,11 +24,20 @@ jobs:
     - name: Build Strapi App for Production
       run: NODE_ENV=production npm run build  
 
+    - name: Clean for Deploy
+      run: |
+        rm -r .cache/
+        rm -r .git/
+        rm -r .github/
+        rm -r .tmp/
+        rm -r node_modules/
+        rm .gitignore
+
     - name: Upload to FTP
       uses: sebastianpopp/ftp-action@releases/v2
       with:
         host: ${{ secrets.FTP_SERVER }}
         user: ${{ secrets.FTP_USERNAME }}
         password: ${{ secrets.FTP_PASSWORD }}
-        localDir: "./build"  
+        localDir: "./"  
         remoteDir: "/strapi"  
