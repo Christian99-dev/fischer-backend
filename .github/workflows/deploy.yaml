@@ -29,7 +29,6 @@ jobs:
         rm -r .cache/
         rm -r .git/
         rm -r .github/
-        rm -r .tmp/
         rm -r node_modules/
         rm .gitignore
 
