@@ -18,7 +18,7 @@ jobs:
     - name: Set up Node.js
       uses: actions/setup-node@v3
       with:
-        node-version: 19 
+        node-version: 20
 
     - name: Install Dependencies
       run: npm install
@@ -29,15 +29,11 @@ jobs:
     - name: Build Strapi App for Production
       run: NODE_ENV=production npm run build  
 
-    - name: Delete Node Modules
-      run: rm -r node_modules/
-
-    - name: Sync Files
-      uses: sebastianpopp/ftp-action@releases/v2
-      with:
-        host: ${{ secrets.FTP_SERVER }}
-        user: ${{ secrets.FTP_USERNAME }}
-        password: ${{ secrets.FTP_PASSWORD }}
-        localDir: "./"
-        remoteDir: "/strapi"
-        options: "--delete --asci"
+    - name: 📂 Sync files
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.4
+        with:
+          server: ${{ secrets.FTP_HOST }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          port: ${{ secrets.FTP_PORT }} # todo replace with your web hosts ftps port
+          protocol: ftp
