@@ -23,8 +23,8 @@ jobs:
     # - name: Install Dependencies
     #   run: npm install
 
-    # - name: Pull in env
-    #   run: mv .env.example .env
+    - name: Pull in env
+      run: mv .env.example .env
 
     # - name: Build Strapi App for Production
     #   run: NODE_ENV=production npm run build  
