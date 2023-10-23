@@ -15,19 +15,19 @@ jobs:
       with:
         fetch-depth: 0
 
-    # - name: Set up Node.js
-    #   uses: actions/setup-node@v3
-    #   with:
-    #     node-version: 19 
+    - name: Set up Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: 19 
 
-    # - name: Install Dependencies
-    #   run: npm install
+    - name: Install Dependencies
+      run: npm install
 
     - name: Pull in env
       run: mv .env.example .env
 
-    # - name: Build Strapi App for Production
-    #   run: NODE_ENV=production npm run build  
+    - name: Build Strapi App for Production
+      run: NODE_ENV=production npm run build  
 
     - name: Sync Files
       uses: milanmk/actions-file-deployer@master
@@ -38,3 +38,4 @@ jobs:
         remote-user: ${{ secrets.FTP_USERNAME }}
         remote-password: ${{ secrets.FTP_PASSWORD }} 
         remote-path: "/strapi"  
+        sync: "full"
