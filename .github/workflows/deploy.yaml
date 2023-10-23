@@ -1,4 +1,4 @@
-name: Build and Deploy Strapi App
+name: 🚀 Build and Deploy Strapi App
 
 on:
   push:
@@ -10,30 +10,30 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout Repository
+    - name: 📦 Checkout Repository
       uses: actions/checkout@v3
       with:
         fetch-depth: 0
 
-    - name: Set up Node.js
+    - name: 📌 Set up Node.js
       uses: actions/setup-node@v3
       with:
         node-version: 20
 
-    - name: Install Dependencies
+    - name: ⚙️ Install Dependencies
       run: npm install
 
-    - name: Pull in env
+    - name: 📝 Pull in Environment Variables
       run: mv .env.example .env
 
-    - name: Build Strapi App for Production
+    - name: 🏗️ Build Strapi App for Production
       run: NODE_ENV=production npm run build  
 
-    - name: 📂 Sync files
+    - name: 🚀 Sync files
       uses: SamKirkland/FTP-Deploy-Action@v4.3.4
       with:
-        server: ${{ secrets.FTP_HOST }}
+        server: ${{ secrets.FTP_SERVER }}
         username: ${{ secrets.FTP_USERNAME }}
         password: ${{ secrets.FTP_PASSWORD }}
-        port: ${{ secrets.FTP_PORT }} # todo replace with your web hosts ftps port
+        port: ${{ secrets.FTP_PORT }}
         protocol: ftp
