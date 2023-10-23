@@ -33,12 +33,11 @@ jobs:
       run: rm -r node_modules/
 
     - name: Sync Files
-      uses: milanmk/actions-file-deployer@master
+      uses: sebastianpopp/ftp-action@releases/v2
       with:
-        remote-protocol: "ftp"
-        remote-port: ${{ secrets.FTP_PORT }}
-        remote-host: ${{ secrets.FTP_SERVER }}
-        remote-user: ${{ secrets.FTP_USERNAME }}
-        remote-password: ${{ secrets.FTP_PASSWORD }} 
-        remote-path: "/strapi"  
-        sync: "delta"
+        host: ${{ secrets.FTP_SERVER }}
+        user: ${{ secrets.FTP_USERNAME }}
+        password: ${{ secrets.FTP_PASSWORD }}
+        localDir: "./"
+        remoteDir: "/strapi"
+        options: "--delete --asci"
