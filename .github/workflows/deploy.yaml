@@ -39,8 +39,8 @@ jobs:
         protocol: ftps
         server-dir: "strapi/"
         exclude: |
-          .cache/
-          .github/
+          **/.cache
+          **/.cache/**
           **/.git*
           **/.git*/**
         
