@@ -43,4 +43,5 @@ jobs:
           **/.cache/**
           **/.git*
           **/.git*/**
+          **/node_modules/**
         
