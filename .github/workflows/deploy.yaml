@@ -22,20 +22,25 @@ jobs:
 
     # - name: Install Dependencies
     #   run: npm install
+    - name: log
+      run: ls -a
 
     - name: Pull in env
       run: mv .env.example .env
 
+    - name: log
+      run: ls -a
+
     # - name: Build Strapi App for Production
     #   run: NODE_ENV=production npm run build  
 
-    - name: Sync Files
-      uses: milanmk/actions-file-deployer@master
-      with:
-        remote-protocol: "ftp"
-        remote-port: ${{ secrets.FTP_PORT }}
-        remote-host: ${{ secrets.FTP_SERVER }}
-        remote-user: ${{ secrets.FTP_USERNAME }}
-        remote-password: ${{ secrets.FTP_PASSWORD }} 
-        remote-path: "/strapi"  
-        sync: "full"
+    # - name: Sync Files
+    #   uses: milanmk/actions-file-deployer@master
+    #   with:
+    #     remote-protocol: "ftp"
+    #     remote-port: ${{ secrets.FTP_PORT }}
+    #     remote-host: ${{ secrets.FTP_SERVER }}
+    #     remote-user: ${{ secrets.FTP_USERNAME }}
+    #     remote-password: ${{ secrets.FTP_PASSWORD }} 
+    #     remote-path: "/strapi"  
+    #     sync: "full"
