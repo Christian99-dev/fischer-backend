@@ -23,10 +23,10 @@ jobs:
     - name: ⚙️ Install Dependencies
       run: npm install
 
-    - name: 📝 Pull in Environment Variables
+    - name: 📝 Pull in Environment Variables File
       run: mv .env.example .env
 
-    - name: Erstelle Datei und füge Umgebungsvariablen hinzu
+    - name: 📝 Create Environment Variables
       run: |
         echo "DATABASE_CLIENT=${{ secrets.DATABASE_CLIENT }}" > .env
         echo "DATABASE_HOST=${{ secrets.DATABASE_HOST }}" >> .env
