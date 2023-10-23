@@ -29,6 +29,9 @@ jobs:
     - name: Build Strapi App for Production
       run: NODE_ENV=production npm run build  
 
+    - name: Delete Node Modules
+      run: rm /node_modules
+
     - name: Sync Files
       uses: milanmk/actions-file-deployer@master
       with:
@@ -38,4 +41,4 @@ jobs:
         remote-user: ${{ secrets.FTP_USERNAME }}
         remote-password: ${{ secrets.FTP_PASSWORD }} 
         remote-path: "/strapi"  
-        sync: "full"
+        sync: "delta"
