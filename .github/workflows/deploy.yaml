@@ -12,6 +12,8 @@ jobs:
     steps:
     - name: Checkout Repository
       uses: actions/checkout@v3
+      with:
+        fetch-depth: 0
 
     - name: Set up Node.js
       uses: actions/setup-node@v3
@@ -21,22 +23,19 @@ jobs:
     - name: Install Dependencies
       run: npm install
 
+    - name: Pull in env
+      run: mv .env.example .env
+
     - name: Build Strapi App for Production
       run: NODE_ENV=production npm run build  
 
-    - name: Clean for Deploy
-      run: |
-        rm -r .cache/
-        rm -r .git/
-        rm -r .github/
-        rm -r node_modules/
-        rm .gitignore
-
-    - name: Upload to FTP
-      uses: sebastianpopp/ftp-action@releases/v2
+    - name: Sync Files
+      uses: milanmk/actions-file-deployer@master
       with:
-        host: ${{ secrets.FTP_SERVER }}
-        user: ${{ secrets.FTP_USERNAME }}
-        password: ${{ secrets.FTP_PASSWORD }}
-        localDir: "./"  
-        remoteDir: "/strapi"  
+        remote-protocol: "ftp"
+        remote-host: ${{ secrets.FTP_SERVER }}
+        remote-user: ${{ secrets.FTP_USERNAME }}
+        remote-password: ${{ secrets.FTP_PASSWORD }} 
+        remote-path: "/strapi"  
+        local-path: "./"
+        sync: "delta"
