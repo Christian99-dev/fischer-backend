@@ -29,9 +29,6 @@ jobs:
     - name: 🏗️ Build Strapi App for Production
       run: NODE_ENV=production npm run build  
 
-    - name: Remove .cache Folder
-      run: rm -rf .cache/
-
     - name: 📂 Sync files
       uses: SamKirkland/FTP-Deploy-Action@v4.3.4
       with:
@@ -41,3 +38,8 @@ jobs:
         port: ${{ secrets.FTP_PORT }}
         protocol: ftps
         server-dir: "strapi/"
+        exclude: |
+        .cache/
+        .github/
+        **/.git*
+        **/.git*/**
