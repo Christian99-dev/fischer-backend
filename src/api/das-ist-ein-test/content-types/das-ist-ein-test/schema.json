@@ -1,0 +1,21 @@
+{
+  "kind": "singleType",
+  "collectionName": "das_ist_ein_tests",
+  "info": {
+    "singularName": "das-ist-ein-test",
+    "pluralName": "das-ist-ein-tests",
+    "displayName": "Das ist ein Test"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Test": {
+      "type": "text"
+    },
+    "Test2": {
+      "type": "string"
+    }
+  }
+}
