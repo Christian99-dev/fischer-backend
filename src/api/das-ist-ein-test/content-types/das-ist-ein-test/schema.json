@@ -4,7 +4,8 @@
   "info": {
     "singularName": "das-ist-ein-test",
     "pluralName": "das-ist-ein-tests",
-    "displayName": "Das ist ein Test"
+    "displayName": "Das ist ein Test",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -15,6 +16,9 @@
       "type": "text"
     },
     "Test2": {
+      "type": "string"
+    },
+    "Test3": {
       "type": "string"
     }
   }

@@ -718,6 +718,7 @@ export interface ApiDasIstEinTestDasIstEinTest extends Schema.SingleType {
     singularName: 'das-ist-ein-test';
     pluralName: 'das-ist-ein-tests';
     displayName: 'Das ist ein Test';
+    description: '';
   };
   options: {
     draftAndPublish: true;
@@ -725,6 +726,7 @@ export interface ApiDasIstEinTestDasIstEinTest extends Schema.SingleType {
   attributes: {
     Test: Attribute.Text;
     Test2: Attribute.String;
+    Test3: Attribute.String;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
