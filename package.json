@@ -5,7 +5,7 @@
   "description": "A Strapi application",
   "scripts": {
     "develop": "strapi develop",
-    "start": "pm2 start server.js --watch .",
+    "start": "strapi start",
     "build": "strapi build",
     "strapi": "strapi"
   },
@@ -13,8 +13,7 @@
     "@strapi/plugin-i18n": "4.14.3",
     "@strapi/plugin-users-permissions": "4.14.3",
     "@strapi/strapi": "4.14.3",
-    "mysql": "2.18.1",
-    "pm2": "^5.3.0"
+    "mysql": "2.18.1"
   },
   "author": {
     "name": "A Strapi developer"
