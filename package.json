@@ -5,9 +5,8 @@
   "description": "A Strapi application",
   "scripts": {
     "develop": "strapi develop",
-    "start": "strapi start",
+    "start": "pm2 start server.js --watch .",
     "build": "strapi build",
-    "startFile": "node server.js",
     "strapi": "strapi"
   },
   "devDependencies": {},
