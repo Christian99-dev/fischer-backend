@@ -1,0 +1,18 @@
+{
+  "kind": "singleType",
+  "collectionName": "formular_popups",
+  "info": {
+    "singularName": "formular-popup",
+    "pluralName": "formular-popups",
+    "displayName": "FormularPopup"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Test": {
+      "type": "string"
+    }
+  }
+}

@@ -785,29 +785,29 @@ export interface ApiFormularFormular extends Schema.SingleType {
   };
 }
 
-export interface ApiFormularPopupsFormularPopups extends Schema.SingleType {
-  collectionName: 'formular_popupss';
+export interface ApiFormularPopupFormularPopup extends Schema.SingleType {
+  collectionName: 'formular_popups';
   info: {
-    singularName: 'formular-popups';
-    pluralName: 'formular-popupss';
-    displayName: 'FormularPopups';
+    singularName: 'formular-popup';
+    pluralName: 'formular-popups';
+    displayName: 'FormularPopup';
   };
   options: {
     draftAndPublish: true;
   };
   attributes: {
-    FalscheEmail: Attribute.String & Attribute.Required;
+    Test: Attribute.String;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<
-      'api::formular-popups.formular-popups',
+      'api::formular-popup.formular-popup',
       'oneToOne',
       'admin::user'
     > &
       Attribute.Private;
     updatedBy: Attribute.Relation<
-      'api::formular-popups.formular-popups',
+      'api::formular-popup.formular-popup',
       'oneToOne',
       'admin::user'
     > &
@@ -1060,7 +1060,7 @@ declare module '@strapi/types' {
       'api::auswahl.auswahl': ApiAuswahlAuswahl;
       'api::footer.footer': ApiFooterFooter;
       'api::formular.formular': ApiFormularFormular;
-      'api::formular-popups.formular-popups': ApiFormularPopupsFormularPopups;
+      'api::formular-popup.formular-popup': ApiFormularPopupFormularPopup;
       'api::leistungen.leistungen': ApiLeistungenLeistungen;
       'api::projekte.projekte': ApiProjekteProjekte;
       'api::rechtliches.rechtliches': ApiRechtlichesRechtliches;
