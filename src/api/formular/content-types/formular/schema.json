@@ -4,7 +4,8 @@
   "info": {
     "singularName": "formular",
     "pluralName": "formulars",
-    "displayName": "Formular"
+    "displayName": "Formular",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -40,6 +41,10 @@
       "required": true
     },
     "Ueberschrift": {
+      "type": "string",
+      "required": true
+    },
+    "EmpfangsEmail": {
       "type": "string",
       "required": true
     }

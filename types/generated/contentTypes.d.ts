@@ -752,6 +752,7 @@ export interface ApiFormularFormular extends Schema.SingleType {
     singularName: 'formular';
     pluralName: 'formulars';
     displayName: 'Formular';
+    description: '';
   };
   options: {
     draftAndPublish: true;
@@ -765,6 +766,7 @@ export interface ApiFormularFormular extends Schema.SingleType {
     Anliegen: Attribute.String & Attribute.Required;
     Button: Attribute.String & Attribute.Required;
     Ueberschrift: Attribute.String & Attribute.Required;
+    EmpfangsEmail: Attribute.String & Attribute.Required;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
