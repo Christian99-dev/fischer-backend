@@ -712,6 +712,36 @@ export interface ApiAuswahlAuswahl extends Schema.SingleType {
   };
 }
 
+export interface ApiDasIstEinTestDasIstEinTest extends Schema.SingleType {
+  collectionName: 'das_ist_ein_tests';
+  info: {
+    singularName: 'das-ist-ein-test';
+    pluralName: 'das-ist-ein-tests';
+    displayName: 'DasIstEinTest';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    Lulke: Attribute.String;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::das-ist-ein-test.das-ist-ein-test',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::das-ist-ein-test.das-ist-ein-test',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiFooterFooter extends Schema.SingleType {
   collectionName: 'footers';
   info: {
@@ -1058,6 +1088,7 @@ declare module '@strapi/types' {
       'plugin::users-permissions.role': PluginUsersPermissionsRole;
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
       'api::auswahl.auswahl': ApiAuswahlAuswahl;
+      'api::das-ist-ein-test.das-ist-ein-test': ApiDasIstEinTestDasIstEinTest;
       'api::footer.footer': ApiFooterFooter;
       'api::formular.formular': ApiFormularFormular;
       'api::formular-popup.formular-popup': ApiFormularPopupFormularPopup;
