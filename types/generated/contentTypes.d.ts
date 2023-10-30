@@ -712,36 +712,6 @@ export interface ApiAuswahlAuswahl extends Schema.SingleType {
   };
 }
 
-export interface ApiDasIstEinTestDasIstEinTest extends Schema.SingleType {
-  collectionName: 'das_ist_ein_tests';
-  info: {
-    singularName: 'das-ist-ein-test';
-    pluralName: 'das-ist-ein-tests';
-    displayName: 'DasIstEinTest';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    Lulke: Attribute.String;
-    createdAt: Attribute.DateTime;
-    updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
-    createdBy: Attribute.Relation<
-      'api::das-ist-ein-test.das-ist-ein-test',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-    updatedBy: Attribute.Relation<
-      'api::das-ist-ein-test.das-ist-ein-test',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-  };
-}
-
 export interface ApiFooterFooter extends Schema.SingleType {
   collectionName: 'footers';
   info: {
@@ -781,7 +751,7 @@ export interface ApiFormularFormular extends Schema.SingleType {
   info: {
     singularName: 'formular';
     pluralName: 'formulars';
-    displayName: 'Formular';
+    displayName: 'FormularPlatzhalter';
     description: '';
   };
   options: {
@@ -796,7 +766,6 @@ export interface ApiFormularFormular extends Schema.SingleType {
     Anliegen: Attribute.String & Attribute.Required;
     Button: Attribute.String & Attribute.Required;
     Ueberschrift: Attribute.String & Attribute.Required;
-    EmpfangsEmail: Attribute.String & Attribute.Required;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -821,12 +790,21 @@ export interface ApiFormularPopupFormularPopup extends Schema.SingleType {
     singularName: 'formular-popup';
     pluralName: 'formular-popups';
     displayName: 'FormularPopup';
+    description: '';
   };
   options: {
     draftAndPublish: true;
   };
   attributes: {
-    Test: Attribute.String;
+    VornamePopup: Attribute.String & Attribute.Required;
+    NachnamePopup: Attribute.String & Attribute.Required;
+    StrasseHausnummerPopup: Attribute.String & Attribute.Required;
+    PlzOrtPopup: Attribute.String & Attribute.Required;
+    EmailUngueltigPopup: Attribute.String & Attribute.Required;
+    EmailPopup: Attribute.String & Attribute.Required;
+    NachrichtAbgeschicktPopup: Attribute.String & Attribute.Required;
+    FehlerPopup: Attribute.String & Attribute.Required;
+    AnliegenPopup: Attribute.String & Attribute.Required;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -838,6 +816,39 @@ export interface ApiFormularPopupFormularPopup extends Schema.SingleType {
       Attribute.Private;
     updatedBy: Attribute.Relation<
       'api::formular-popup.formular-popup',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiFormularPostfachFormularPostfach extends Schema.SingleType {
+  collectionName: 'formular_postfaches';
+  info: {
+    singularName: 'formular-postfach';
+    pluralName: 'formular-postfaches';
+    displayName: 'FormularPostfach';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    EmpfaengerEmail: Attribute.String & Attribute.Required;
+    Betreff: Attribute.String & Attribute.Required;
+    NachrichtenFormat: Attribute.Text & Attribute.Required;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::formular-postfach.formular-postfach',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::formular-postfach.formular-postfach',
       'oneToOne',
       'admin::user'
     > &
@@ -1088,10 +1099,10 @@ declare module '@strapi/types' {
       'plugin::users-permissions.role': PluginUsersPermissionsRole;
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
       'api::auswahl.auswahl': ApiAuswahlAuswahl;
-      'api::das-ist-ein-test.das-ist-ein-test': ApiDasIstEinTestDasIstEinTest;
       'api::footer.footer': ApiFooterFooter;
       'api::formular.formular': ApiFormularFormular;
       'api::formular-popup.formular-popup': ApiFormularPopupFormularPopup;
+      'api::formular-postfach.formular-postfach': ApiFormularPostfachFormularPostfach;
       'api::leistungen.leistungen': ApiLeistungenLeistungen;
       'api::projekte.projekte': ApiProjekteProjekte;
       'api::rechtliches.rechtliches': ApiRechtlichesRechtliches;

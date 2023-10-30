@@ -1,0 +1,28 @@
+{
+  "kind": "singleType",
+  "collectionName": "formular_postfaches",
+  "info": {
+    "singularName": "formular-postfach",
+    "pluralName": "formular-postfaches",
+    "displayName": "FormularPostfach",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "EmpfaengerEmail": {
+      "type": "string",
+      "required": true
+    },
+    "Betreff": {
+      "type": "string",
+      "required": true
+    },
+    "NachrichtenFormat": {
+      "type": "text",
+      "required": true
+    }
+  }
+}

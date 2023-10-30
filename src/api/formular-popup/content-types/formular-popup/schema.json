@@ -4,15 +4,49 @@
   "info": {
     "singularName": "formular-popup",
     "pluralName": "formular-popups",
-    "displayName": "FormularPopup"
+    "displayName": "FormularPopup",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
   },
   "pluginOptions": {},
   "attributes": {
-    "Test": {
-      "type": "string"
+    "VornamePopup": {
+      "type": "string",
+      "required": true
+    },
+    "NachnamePopup": {
+      "type": "string",
+      "required": true
+    },
+    "StrasseHausnummerPopup": {
+      "type": "string",
+      "required": true
+    },
+    "PlzOrtPopup": {
+      "type": "string",
+      "required": true
+    },
+    "EmailUngueltigPopup": {
+      "type": "string",
+      "required": true
+    },
+    "EmailPopup": {
+      "type": "string",
+      "required": true
+    },
+    "NachrichtAbgeschicktPopup": {
+      "type": "string",
+      "required": true
+    },
+    "FehlerPopup": {
+      "type": "string",
+      "required": true
+    },
+    "AnliegenPopup": {
+      "type": "string",
+      "required": true
     }
   }
 }
