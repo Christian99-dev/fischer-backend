@@ -784,6 +784,39 @@ export interface ApiFormularFormular extends Schema.SingleType {
   };
 }
 
+export interface ApiFormularAusgangsMailFormularAusgangsMail
+  extends Schema.SingleType {
+  collectionName: 'formular_ausgangs_mails';
+  info: {
+    singularName: 'formular-ausgangs-mail';
+    pluralName: 'formular-ausgangs-mails';
+    displayName: 'FormularAusgangsMail';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    Empfaenger: Attribute.String & Attribute.Required;
+    Betreff: Attribute.String & Attribute.Required;
+    NachrichtenFormat: Attribute.Text & Attribute.Required;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::formular-ausgangs-mail.formular-ausgangs-mail',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::formular-ausgangs-mail.formular-ausgangs-mail',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiFormularPopupFormularPopup extends Schema.SingleType {
   collectionName: 'formular_popups';
   info: {
@@ -817,39 +850,6 @@ export interface ApiFormularPopupFormularPopup extends Schema.SingleType {
       Attribute.Private;
     updatedBy: Attribute.Relation<
       'api::formular-popup.formular-popup',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-  };
-}
-
-export interface ApiFormularPostfachFormularPostfach extends Schema.SingleType {
-  collectionName: 'formular_postfaches';
-  info: {
-    singularName: 'formular-postfach';
-    pluralName: 'formular-postfaches';
-    displayName: 'FormularPostfach';
-    description: '';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    EmpfaengerEmail: Attribute.String & Attribute.Required;
-    Betreff: Attribute.String & Attribute.Required;
-    NachrichtenFormat: Attribute.Text & Attribute.Required;
-    createdAt: Attribute.DateTime;
-    updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
-    createdBy: Attribute.Relation<
-      'api::formular-postfach.formular-postfach',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-    updatedBy: Attribute.Relation<
-      'api::formular-postfach.formular-postfach',
       'oneToOne',
       'admin::user'
     > &
@@ -1102,8 +1102,8 @@ declare module '@strapi/types' {
       'api::auswahl.auswahl': ApiAuswahlAuswahl;
       'api::footer.footer': ApiFooterFooter;
       'api::formular.formular': ApiFormularFormular;
+      'api::formular-ausgangs-mail.formular-ausgangs-mail': ApiFormularAusgangsMailFormularAusgangsMail;
       'api::formular-popup.formular-popup': ApiFormularPopupFormularPopup;
-      'api::formular-postfach.formular-postfach': ApiFormularPostfachFormularPostfach;
       'api::leistungen.leistungen': ApiLeistungenLeistungen;
       'api::projekte.projekte': ApiProjekteProjekte;
       'api::rechtliches.rechtliches': ApiRechtlichesRechtliches;

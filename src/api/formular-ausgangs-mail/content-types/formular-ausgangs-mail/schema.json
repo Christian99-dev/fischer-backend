@@ -1,18 +1,17 @@
 {
   "kind": "singleType",
-  "collectionName": "formular_postfaches",
+  "collectionName": "formular_ausgangs_mails",
   "info": {
-    "singularName": "formular-postfach",
-    "pluralName": "formular-postfaches",
-    "displayName": "FormularPostfach",
-    "description": ""
+    "singularName": "formular-ausgangs-mail",
+    "pluralName": "formular-ausgangs-mails",
+    "displayName": "FormularAusgangsMail"
   },
   "options": {
     "draftAndPublish": true
   },
   "pluginOptions": {},
   "attributes": {
-    "EmpfaengerEmail": {
+    "Empfaenger": {
       "type": "string",
       "required": true
     },
