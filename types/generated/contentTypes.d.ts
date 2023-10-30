@@ -805,6 +805,7 @@ export interface ApiFormularPopupFormularPopup extends Schema.SingleType {
     NachrichtAbgeschicktPopup: Attribute.String & Attribute.Required;
     FehlerPopup: Attribute.String & Attribute.Required;
     AnliegenPopup: Attribute.String & Attribute.Required;
+    BitteWartenPopup: Attribute.String & Attribute.Required;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

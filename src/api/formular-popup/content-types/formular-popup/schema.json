@@ -47,6 +47,10 @@
     "AnliegenPopup": {
       "type": "string",
       "required": true
+    },
+    "BitteWartenPopup": {
+      "type": "string",
+      "required": true
     }
   }
 }
