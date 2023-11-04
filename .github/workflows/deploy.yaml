@@ -35,6 +35,7 @@ jobs:
         echo "DATABASE_USERNAME=${{ secrets.DATABASE_USERNAME }}" >> .env
         echo "DATABASE_PASSWORD=${{ secrets.DATABASE_PASSWORD }}" >> .env
         echo "DATABASE_SSL=${{ secrets.DATABASE_SSL }}" >> .env
+        echo "GITHUB_PAT=${{ secrets.GITHUB_PAT }}" >> .env
 
 
     - name: 🏗️ Build Strapi App for Production
