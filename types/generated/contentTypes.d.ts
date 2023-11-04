@@ -1056,6 +1056,7 @@ export interface ApiWillkommenWillkommen extends Schema.SingleType {
     singularName: 'willkommen';
     pluralName: 'willkommens';
     displayName: 'Willkommen';
+    description: '';
   };
   options: {
     draftAndPublish: true;
@@ -1064,7 +1065,6 @@ export interface ApiWillkommenWillkommen extends Schema.SingleType {
     Titel: Attribute.String & Attribute.Required;
     Untertitel: Attribute.String & Attribute.Required;
     Hintergrund: Attribute.Media & Attribute.Required;
-    Thumbnail: Attribute.Media & Attribute.Required;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
