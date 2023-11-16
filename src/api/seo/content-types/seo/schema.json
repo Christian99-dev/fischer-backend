@@ -4,7 +4,8 @@
   "info": {
     "singularName": "seo",
     "pluralName": "seos",
-    "displayName": "SEO"
+    "displayName": "SEO",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -16,12 +17,12 @@
       "required": true
     },
     "favicon": {
-      "allowedTypes": [
-        "images"
-      ],
       "type": "media",
       "multiple": false,
-      "required": true
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
     },
     "WebseitenTitel": {
       "type": "string",
@@ -43,6 +44,14 @@
       "type": "component",
       "repeatable": false,
       "component": "components.seo-page-info",
+      "required": true
+    },
+    "robots_txt": {
+      "type": "richtext",
+      "required": true
+    },
+    "sitemap_xml": {
+      "type": "richtext",
       "required": true
     }
   }

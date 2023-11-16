@@ -964,6 +964,7 @@ export interface ApiSeoSeo extends Schema.SingleType {
     singularName: 'seo';
     pluralName: 'seos';
     displayName: 'SEO';
+    description: '';
   };
   options: {
     draftAndPublish: true;
@@ -978,6 +979,8 @@ export interface ApiSeoSeo extends Schema.SingleType {
       Attribute.Required;
     Datenschutzerklaerung: Attribute.Component<'components.seo-page-info'> &
       Attribute.Required;
+    robots_txt: Attribute.RichText & Attribute.Required;
+    sitemap_xml: Attribute.RichText & Attribute.Required;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
